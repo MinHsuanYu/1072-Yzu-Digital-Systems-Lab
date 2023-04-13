@@ -1,0 +1,4 @@
+module lab7(a);
+	input a;
+	
+endmodule

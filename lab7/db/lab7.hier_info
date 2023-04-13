@@ -1,0 +1,44 @@
+|lab7
+in_a[0] => Decoder0.IN2
+in_a[0] => Add0.IN3
+in_a[1] => Decoder0.IN1
+in_a[1] => Add0.IN2
+in_a[2] => Decoder0.IN0
+in_a[2] => Add0.IN1
+in_b[0] => Decoder1.IN2
+in_b[0] => Add0.IN6
+in_b[1] => Decoder1.IN1
+in_b[1] => Add0.IN5
+in_b[2] => Decoder1.IN0
+in_b[2] => Add0.IN4
+cin => Add1.IN8
+out_a[6] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+out_a[5] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out_a[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out_a[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+out_a[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+out_a[1] <= out_a.DB_MAX_OUTPUT_PORT_TYPE
+out_a[0] <= out_a.DB_MAX_OUTPUT_PORT_TYPE
+out_b[6] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+out_b[5] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+out_b[4] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+out_b[3] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+out_b[2] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+out_b[1] <= out_b.DB_MAX_OUTPUT_PORT_TYPE
+out_b[0] <= out_b.DB_MAX_OUTPUT_PORT_TYPE
+out_c[6] <= <VCC>
+out_c[5] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+out_c[4] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+out_c[3] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+out_c[2] <= <GND>
+out_c[1] <= <GND>
+out_c[0] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+out_d[6] <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+out_d[5] <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+out_d[4] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+out_d[3] <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+out_d[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+out_d[1] <= out_d.DB_MAX_OUTPUT_PORT_TYPE
+out_d[0] <= out_d.DB_MAX_OUTPUT_PORT_TYPE
+
+

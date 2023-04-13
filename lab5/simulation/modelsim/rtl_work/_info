@@ -1,0 +1,68 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\1061534\simulation\modelsim
+vFA
+IGEICAiKkm9?;2OPZK4G6L0
+V3@hUko^2=K0ziX>UChc9U2
+Z1 dD:\1061534\simulation\modelsim
+Z2 w1556108869
+Z3 8D:/1061534/S1061534_lab5.v
+Z4 FD:/1061534/S1061534_lab5.v
+L0 1
+Z5 OV;L;10.1b;51
+r1
+31
+Z6 !s108 1556109067.994000
+Z7 !s107 D:/1061534/S1061534_lab5.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/1061534|D:/1061534/S1061534_lab5.v|
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work +incdir+D:/1061534 -O0
+n@f@a
+!i10b 1
+!s100 Ka=Lz[m0NBiHh5RHS8TeB2
+!s85 0
+!s101 -O0
+vS1061534_lab5
+ICGK8:J9BW]DJ@^iJ;ADiB2
+V0;T2Tn>`n8:6;6Ia9=k8i1
+R1
+R2
+R3
+R4
+L0 7
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@s1061534_lab5
+!i10b 1
+!s100 7Cz>a8zO`MS5X=7EeYWOS0
+!s85 0
+!s101 -O0
+vS1061534_lab5_test
+!i10b 1
+!s100 RNbcAbK[Jb@:O98=TFnGU2
+I;JaiR]DDl`8kX`mIKSA8[2
+VcOaQNGUQaXb:`N@Y[^[TJ1
+R1
+w1556108856
+8D:/1061534/Verilog2.v
+FD:/1061534/Verilog2.v
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1556109068.228000
+!s107 D:/1061534/Verilog2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/1061534|D:/1061534/Verilog2.v|
+!s101 -O0
+R9
+R10
+n@s1061534_lab5_test

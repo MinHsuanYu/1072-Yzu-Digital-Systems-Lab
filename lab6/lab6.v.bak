@@ -1,0 +1,4 @@
+module lab6(a,b)
+	input a;
+	output b;
+endmodule 

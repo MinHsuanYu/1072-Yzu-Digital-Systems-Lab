@@ -1,0 +1,13 @@
+|hw1
+D0 => WideOr0.IN1
+D1 => out1.IN0
+D1 => WideOr0.IN2
+D2 => comb~0.IN0
+D2 => out1.IN1
+D3 => comb~0.IN1
+D3 => comb~1.IN1
+V <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+x <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+y <= comb~1.DB_MAX_OUTPUT_PORT_TYPE
+
+

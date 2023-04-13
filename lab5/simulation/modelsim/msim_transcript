@@ -1,0 +1,42 @@
+# Reading C:/altera/12.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do S1061534_lab5_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\12.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\12.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/1061534 {D:/1061534/S1061534_lab5.v}
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module FA
+# -- Compiling module S1061534_lab5
+# 
+# Top level modules:
+# 	S1061534_lab5
+# 
+# vlog -vlog01compat -work work +incdir+D:/1061534 {D:/1061534/Verilog2.v}
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module S1061534_lab5_test
+# 
+# Top level modules:
+# 	S1061534_lab5_test
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs="+acc"  S1061534_lab5_test
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps S1061534_lab5_test 
+# Loading work.S1061534_lab5_test
+# Loading work.S1061534_lab5
+# Loading work.FA
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# a=0000,b=0000,s=0000,c_input=0,c_output=0
+# a=1011,b=0100,s=1111,c_input=0,c_output=0
+# a=0111,b=1101,s=0101,c_input=1,c_output=1

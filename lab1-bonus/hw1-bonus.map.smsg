@@ -1,0 +1,4 @@
+Info (10281): Verilog HDL Declaration information at hw1-bonus.v(13): object "AbB0" differs only in case from object "ABb0" in the same scope
+Info (10281): Verilog HDL Declaration information at hw1-bonus.v(13): object "AbB1" differs only in case from object "ABb1" in the same scope
+Info (10281): Verilog HDL Declaration information at hw1-bonus.v(13): object "AbB2" differs only in case from object "ABb2" in the same scope
+Info (10281): Verilog HDL Declaration information at hw1-bonus.v(13): object "AbB3" differs only in case from object "ABb3" in the same scope

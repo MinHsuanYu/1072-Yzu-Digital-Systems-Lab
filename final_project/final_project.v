@@ -1,0 +1,166 @@
+module final_project(reset, default_mode, mode1,mode2,button0, button1, button2, hex0_d, hex1_d, hex2_d, hex3_d);
+	input reset,default_mode,mode1,mode2,button0, button1, button2;
+	output reg[0:6] hex0_d=7'b1011110, hex1_d=7'b0001111, hex2_d=7'b0001111, hex3_d=7'b0001111;
+	reg[3:0]original_money_hex3 =4'b0101;
+	reg[3:0]original_money_hex2 =4'b0000;
+	reg[3:0]original_money_hex1 =4'b0000;
+	reg[3:0]original_money_hex0 =4'b0000;
+	
+	reg[3:0]coin_hex3 =4'b0000;
+	reg[3:0]coin_hex2 =4'b0000;
+	reg[3:0]coin_hex1 =4'b0000;
+	reg[3:0]coin_hex0 =4'b0000;
+	
+	reg[3:0]result_hex3 =4'b0111;
+	reg[3:0]result_hex2 =4'b0111;
+	reg[3:0]result_hex1 =4'b0111;
+	
+	reg seed=0,clk=0;
+	reg init=0;
+	
+	
+	task print_four;
+		input reg[3:0]in;
+		output reg[0:6]out;
+		reg i = 1;
+		begin
+			case(in[3:0])
+				4'b0000:out = 7'b0000001;//0
+				4'b0001:out = 7'b1001111;//1
+				4'b0010:out = 7'b0010010;//2
+				4'b0011:out = 7'b0000110;//3
+				4'b0100:out = 7'b1001100;//4
+				4'b0101:out = 7'b0100100;//5
+				4'b0110:out = 7'b0100000;//6
+				4'b0111:out = 7'b0001111;//7
+				4'b1000:out = 7'b0000000;//8
+				4'b1001:out = 7'b0001100;//9
+			endcase
+			i = 0;
+		end
+	endtask
+	//random seed
+	always@(1)
+	begin
+		case(seed)
+			1:seed=0;
+			default:seed=1;
+		endcase
+	end
+	
+	//clock
+	always@(1)
+	begin
+		case(clk)
+			1:clk=0;
+			default:clk=1;
+		endcase
+	end
+	
+	//show
+	always@(1)
+	begin
+		if(!default_mode)//when SW2==0 ($$)
+		begin
+			if(mode1)//SW1
+			begin
+				print_four(original_money_hex0,hex0_d);
+				print_four(original_money_hex1,hex1_d);
+				print_four(original_money_hex2,hex2_d);
+				print_four(original_money_hex3,hex3_d);
+			end
+			else
+			begin
+				print_four(coin_hex0,hex0_d);
+				print_four(coin_hex1,hex1_d);
+				print_four(coin_hex2,hex2_d);
+				print_four(coin_hex3,hex3_d);
+			end
+		end
+		else//when SW2==1 (LABA)
+		begin
+			if(!mode2)//when SW0==0 random
+			begin
+				result_hex1[3] = result_hex1[2];
+				result_hex1[2] = result_hex1[1];
+				result_hex1[1] = result_hex1[0];
+				result_hex1[0] = clk ? seed : result_hex1[2] ^ result_hex1[3];
+				result_hex2[3] = result_hex2[2];
+				result_hex2[2] = result_hex2[1];
+				result_hex2[1] = result_hex2[0];
+				result_hex2[0] = clk ? seed : result_hex2[2] ^ result_hex2[3];
+				result_hex3[3] = result_hex3[2];
+				result_hex3[2] = result_hex3[1];
+				result_hex3[1] = result_hex3[0];
+				result_hex3[0] = clk ? seed : result_hex3[2] ^ result_hex3[3];
+				result_hex1 = result_hex1 % 10;
+				result_hex2 = result_hex2 % 10;
+				result_hex3 = result_hex3 % 10;
+				hex0_d = 7'b1101110;//handle
+			end
+			else //stop
+				hex0_d=7'b1011110;//handle
+			print_four(result_hex1,hex1_d);
+			print_four(result_hex2,hex2_d);
+			print_four(result_hex3,hex3_d);
+		end
+	end
+	
+	//when click button2
+	always@(posedge !button2)
+	begin
+		if(!reset)
+		begin
+			//pay $10
+			if(original_money_hex1==0)
+			begin
+				if(original_money_hex2==0)
+				begin
+					original_money_hex2=original_money_hex2+9;
+					original_money_hex1=original_money_hex1+9;
+					original_money_hex3=original_money_hex3-1;
+				end
+				else
+				begin
+					original_money_hex1=original_money_hex1+9;
+					original_money_hex2=original_money_hex2-1;
+				end
+			end
+			else
+				original_money_hex1=original_money_hex1-1;
+				
+			//gambling money+$10
+			if(coin_hex1==9)
+			begin
+				if(coin_hex2==9)
+				begin
+					coin_hex2=0;
+					coin_hex1=0;
+					coin_hex3=coin_hex3+1;
+				end
+				else
+				begin
+					coin_hex1=0;
+					coin_hex2=coin_hex2+1;
+				end
+			end
+			else
+				coin_hex1=coin_hex1+1;
+		end
+		else
+		begin
+			original_money_hex3=5;
+			original_money_hex2=0;
+			original_money_hex1=0;
+			original_money_hex0=0;
+			
+			coin_hex3=0;
+			coin_hex2=0;
+			coin_hex1=0;
+			coin_hex0=0;
+		end
+	end
+	
+	
+	
+endmodule 
